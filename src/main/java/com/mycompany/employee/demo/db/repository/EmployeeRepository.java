@@ -11,5 +11,6 @@ public interface EmployeeRepository extends MongoRepository<EmployeeDTO, String>
 	
 	public List<EmployeeDTO> findAll();
 	public Optional<EmployeeDTO> findById(String id);
+	public <S extends EmployeeDTO> S save(EmployeeDTO employeeDTO);
 
 }

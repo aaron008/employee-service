@@ -1,7 +1,5 @@
 package com.mycompany.employee.demo.model;
 
-import org.springframework.data.annotation.Id;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,11 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmployeeDTO {
-
-	@Id
-	private String id;
+public class SaveEmployeeRequest {
 	
+	private String id;
+	private String employeeId;
 	private String firstName;
 	private String lastName;
 	private String address1;
@@ -27,5 +24,4 @@ public class EmployeeDTO {
 	private String phone;
 	private String title;
 	private String SSN;
-	private String employeeId;
 }
