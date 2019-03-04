@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 import java.util.Optional;
 
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,11 @@ public class EmployeeServiceImplTest {
 	
 	@Autowired
 	private EmployeeRepository employeeRepository;
+	
+	@After
+	public void cleanUp() {
+		employeeRepository.deleteAll();
+	}
 	
 	@Test
 	public void shouldReturnCreatedEmployee_whenCreateEmployee_isInvoked() {
@@ -73,6 +79,7 @@ public class EmployeeServiceImplTest {
 		assertThat(employee.getEmail()).isEqualTo(savedEmployeeDTO.getEmail());
 		assertThat(employee.getEmployeeId()).isEqualTo(savedEmployeeDTO.getEmployeeId());
 		assertThat(employee.getTitle()).isEqualTo(savedEmployeeDTO.getTitle());
+		
 	}
 	
 	@Test
