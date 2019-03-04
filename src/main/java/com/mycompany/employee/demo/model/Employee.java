@@ -22,4 +22,5 @@ public class Employee {
 	private String phone;
 	private String title;
 	private String id;
+	private String employeeId;
 }

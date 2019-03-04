@@ -12,5 +12,5 @@ public interface EmployeeService {
 	public Employee getEmployeeById(String id);
 	public Employee updateEmployee(SaveEmployeeRequest request) throws NoEmployeeFoundException;
 	public Employee createEmployee(SaveEmployeeRequest request);
-	public void deleteEmployee(String id);
+	public boolean deleteEmployee(String id);
 }
